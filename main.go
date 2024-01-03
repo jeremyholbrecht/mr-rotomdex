@@ -13,7 +13,7 @@ import (
 
 // insert your token
 func main() {
-	rotomdex, err := discordgo.New("Bot")
+	rotomdex, err := discordgo.New("Bot ")
 
 	if err != nil {
 		log.Fatal(err)
@@ -46,15 +46,51 @@ func MessageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 	}
 
 	if m.Content == "bulbasaur" {
-		var bulbasaurImg = discordgo.MessageEmbedThumbnail{
-			URL: "http://pldh.net/media/pokemon/ken_sugimori/original/001.png",
-		}
-
 		bulbasaur := discordgo.MessageEmbed{
 			Title:     "Bulbasaur",
 			Timestamp: time.Now().Format(time.RFC3339),
-			Color:     0x00ff00,
-			Thumbnail: &bulbasaurImg,
+			Color:     0x00ff00, //green
+			Image: &discordgo.MessageEmbedImage{
+				URL: "https://archives.bulbagarden.net/media/upload/9/97/001Bulbasaur_RB.png",
+			},
+
+			Fields: []*discordgo.MessageEmbedField{
+				{
+					Name:   "DexNr",
+					Value:  "0001",
+					Inline: true,
+				},
+
+				{
+					Name:   "Type",
+					Value:  "Grass/Poison",
+					Inline: true,
+				},
+
+				{
+					Name:   "Species",
+					Value:  "Seed Pokémon",
+					Inline: true,
+				},
+
+				{
+					Name:   "Abilities",
+					Value:  "Overgrow/Chlorophyll(Hidden Ability)",
+					Inline: false,
+				},
+
+				{
+					Name:   "Height",
+					Value:  "0.7 m (2′04″)",
+					Inline: true,
+				},
+
+				{
+					Name:   "Weight",
+					Value:  "6.9 kg (15.2 lbs)",
+					Inline: true,
+				},
+			},
 		}
 		s.ChannelMessageSendEmbed(m.ChannelID, &bulbasaur)
 	}
