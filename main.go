@@ -10,8 +10,9 @@ import (
 	"github.com/bwmarrin/discordgo"
 )
 
+// insert your token
 func main() {
-	rotomdex, err := discordgo.New("Bot MTE5MjA0MzMyNTU0OTcxNTU1Ng.G6Fnhw.aeimEppR-dew23Lne1QbDSrW6_as8HXTp4lmj4")
+	rotomdex, err := discordgo.New("Bot")
 
 	if err != nil {
 		log.Fatal(err)
