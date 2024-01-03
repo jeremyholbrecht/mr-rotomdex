@@ -6,6 +6,7 @@ import (
 	"os"
 	"os/signal"
 	"syscall"
+	"time"
 
 	"github.com/bwmarrin/discordgo"
 )
@@ -44,7 +45,17 @@ func MessageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 		return
 	}
 
-	if m.Content == "hello" {
-		s.ChannelMessageSend(m.ChannelID, "world!")
+	if m.Content == "bulbasaur" {
+		var bulbasaurImg = discordgo.MessageEmbedThumbnail{
+			URL: "http://pldh.net/media/pokemon/ken_sugimori/original/001.png",
+		}
+
+		bulbasaur := discordgo.MessageEmbed{
+			Title:     "Bulbasaur",
+			Timestamp: time.Now().Format(time.RFC3339),
+			Color:     0x00ff00,
+			Thumbnail: &bulbasaurImg,
+		}
+		s.ChannelMessageSendEmbed(m.ChannelID, &bulbasaur)
 	}
 }
