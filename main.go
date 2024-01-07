@@ -13,7 +13,7 @@ import (
 
 // insert your token
 func main() {
-	rotomdex, err := discordgo.New("Bot")
+	rotomdex, err := discordgo.New("Bot MTE5MjA0MzMyNTU0OTcxNTU1Ng.GFprpk.ulX6DcKQUFtunlArGVzcDQEMR-LFweqxt_5Nuw")
 
 	if err != nil {
 		log.Fatal(err)
@@ -51,7 +51,7 @@ func MessageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 			Timestamp: time.Now().Format(time.RFC3339),
 			Color:     0x00ff00, //green
 			Image: &discordgo.MessageEmbedImage{
-				URL: "https://archives.bulbagarden.net/media/upload/9/97/001Bulbasaur_RB.png",
+				URL: "https://images.wikidexcdn.net/mwuploads/wikidex/4/43/latest/20190406170624/Bulbasaur.png",
 			},
 
 			Fields: []*discordgo.MessageEmbedField{
@@ -101,7 +101,7 @@ func MessageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 			Timestamp: time.Now().Format(time.RFC3339),
 			Color:     0x00ff00, //green
 			Image: &discordgo.MessageEmbedImage{
-				URL: "https://archives.bulbagarden.net/media/upload/c/c1/002Ivysaur_RB.png",
+				URL: "https://images.wikidexcdn.net/mwuploads/wikidex/8/86/latest/20190406151903/Ivysaur.png",
 			},
 
 			Fields: []*discordgo.MessageEmbedField{
@@ -151,7 +151,7 @@ func MessageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 			Timestamp: time.Now().Format(time.RFC3339),
 			Color:     0xba55d3, //purple
 			Image: &discordgo.MessageEmbedImage{
-				URL: "https://archives.bulbagarden.net/media/upload/b/bb/033Nidorino_RG.png",
+				URL: "https://images.wikidexcdn.net/mwuploads/wikidex/7/7a/latest/20080909113745/Nidorino.png",
 			},
 
 			Fields: []*discordgo.MessageEmbedField{
